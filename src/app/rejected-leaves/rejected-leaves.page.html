@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rejected Leaves :<b>{{namefortemp}}</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<body>
+  <div class="Reporttable">
+  <table border="2px">
+    <tr style="background-color: rgb(163, 220, 222);padding: 20px;">
+     
+      <th style="padding: 25px;">
+        StartDate 
+      </th>
+      <th style="padding: 25px;">
+       
+        NoOfDays 
+      </th>
+      <th style="padding: 25px;">
+        Reason
+      </th>
+     
+<th style="padding: 25px;"> Leave Type</th>
+<th></th>
+
+    </tr>
+    <tbody *ngFor="let itm of LeaveList" >
+    <tr *ngIf="itm.status==2" [ngStyle]="{'background-color':itm.status===2?'red':'green'}" >
+      <!--<td><input type="text" name="name" [value]='itm.uname'></td>-->
+      <td style="padding: 20,5,20,5px;">
+      {{itm.AppliedDate}}</td>
+      <td style="padding: 20,5,20,5px;"> {{itm.NoofDays}}</td>
+      <td style="padding: 20,5,20,5px;">{{itm.LeaveReason}}</td>
+      <td style="padding: 20,5,20,5px;">{{itm.type}}</td>
+      </tr>
+  </tbody>
+  </table>
+</div>
+</body>
+</ion-content>

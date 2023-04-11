@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</ion-header>
+
+<ion-content>
+<!--Nav-->
+<div>
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" >
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/home']" style="color:white;">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/employee-list']"  style="color:white;">Add </a>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<!--Table-->
+
+<table class="table">
+  <thead class="thead-dark" style="color:purple ;background-color: #4CAF50;">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">User name</th>
+      <th scope="col">Password</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let itm of EmployeeDetials"  style="box-shadow: 2px 2px 5px #ccc;">
+    <tr *ngIf="itm.Status ==0" style="color:gray ;">
+ 
+      <td><input type="text" [value]="itm.Id" style="border: none;width: 15px;border-color: aliceblue;"></td>
+      <td><input type="text" [value]="itm.Name" style="border: none;border-color: aliceblue;"></td>
+      <td><input type="text" [value]="itm.Email" style="border: none;border-color: aliceblue;"></td>
+      <td><input type="text" [value]="itm.Phone" style="border: none;border-color: aliceblue;"></td>
+      <td><input type="text" [value]="itm.Username" style="border: none;border-color: aliceblue;"></td>
+      <td><input name="txtpasseord" type="text" [value]="itm.Password"   style="border: none;border-color: aliceblue;"></td>
+     
+
+      <td>
+        <button    class="btn btn-light" type="button" data-toggle="tooltip" data-placement="top" class="btn btn-success" title="Edit" (click)="EditeEmp(itm)"><i class="fa fa-trash" style="border-radius:15px;"></i>Edit</button>
+    
+      <!-- <input type="submit" class="btn btn-outline-secondary" value="Edit"   (click)="EditEmployee(itm)"    /></td>-->
+    
+    <td>
+        <button    class="btn btn-light" type="button" data-toggle="tooltip" data-placement="top" class="btn btn-danger"   title="Delete" (click)="DeleteEmp(itm.Id)"><i class="fa fa-trash" style="border-radius:15px;"></i>Delete</button>
+    </td>
+    <td>
+     <!---- <a class="nav-link" [routerLink]="['/edit-employee']"  style="color:white;"> <button    class="btn btn-light" type="button" data-toggle="tooltip" data-placement="top" title="Edit" ><i class="fa fa-trash" style="border-radius:15px;" >
+        </i>Edit</button>  </a>-->
+
+       
+  </td>
+     
+    </tr>
+   
+</table>
+
+</ion-content>

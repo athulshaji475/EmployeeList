@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LeaveReportUser :<b>{{namefortemp}}</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<body>
+  <div class="Reporttable">
+  <table border="2px">
+    <tr style="background-color: rgb(163, 220, 222);padding: 20px;">
+     
+      <th style="padding: 15px;">
+        StartDate 
+      </th>
+      <th style="padding: 15px;">
+       
+        NoOfDays 
+      </th>
+      <th style="padding: 15px;">
+        Reason
+      </th>
+     
+<th style="padding: 15px;"> Leave Typr</th>
+<th></th>
+
+    </tr>
+    <tr *ngFor="let itm of LeaveList"  >
+      <!--<td><input type="text" name="name" [value]='itm.uname'></td>-->
+      <td><input type="text" name="reasn"  [value]='itm.AppliedDate'></td>
+      <td><input type="text" name="NoOfDays" [value]="itm.NoofDays"></td>
+      <td><input type="text" name="Reason" [value]="itm.LeaveReason"></td>
+      <td><input type="text" name="type" [value]="itm.type"></td>
+      <td style="padding: 10px;" [ngStyle]="{'background-color':itm.status===0?'Yellow':itm.status===1?'green':'red'}" >Status</td>
+    </tr>
+  </table>
+</div>
+</body>
+</ion-content>

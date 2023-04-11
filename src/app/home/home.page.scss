@@ -25,3 +25,18 @@
 #container a {
   text-decoration: none;
 }
+.body-img{
+  background-image: url('/assets/img1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+i{
+  font-size: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+.pos{
+  display: flex;
+  justify-content: space-between;
+
+}

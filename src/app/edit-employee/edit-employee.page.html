@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome </ion-title>
+      </ion-toolbar>
+
+</ion-header>
+
+<ion-content >
+  <body>
+<!--Nav-->
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" >
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/view-employee']" style="color:white;">Report </a>
+          </li>
+         
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <br>
+
+  <!--Form-->
+  
+  <div>
+    
+    
+   <form>
+
+      <div class="form">
+              
+        <h3>Edit</h3>
+        <label>Name:</label>
+        <input  type="text" name="name"   [(ngModel)]="user.Name" />
+       
+        <br />
+        <label>Email:</label>
+        <input type="text" name="email"   [(ngModel)]="user.Email"  />
+        <br />
+        <label>Phone:</label>
+        <input type="text"  name="phone"   [(ngModel)]="user.Phone"  />
+        <br />
+        <label>Username:</label>
+        <input type="text" name="username"   [(ngModel)]="user.Username"/>
+        <br />
+        <label>Password:</label>
+        <input type="password" name="password"   [(ngModel)]="user.Password"/>
+      
+        <br />
+       
+       
+       
+
+          <input type="submit" value="Save" (click)="edit()"  />
+         
+       
+      </div>
+    </form>
+ 
+</div>
+</body>
+</ion-content>
+
+

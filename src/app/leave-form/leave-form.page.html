@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User: {{user}}</ion-title>
+      </ion-toolbar>
+
+</ion-header>
+
+<ion-content >
+
+  <div class="container" >
+		<h1>Apply Leave Form</h1>
+		<form action="#" method="post">
+			<div class="container1">
+			<label for="name"  >UserName</label>
+			<input type="text" [(ngModel)]="leave.username"   id="name" name="name" placeholder="Enter your name">
+
+			<label for="email">Email</label>
+			<input type="text" [(ngModel)]="leave.email"  id="email" name="email" placeholder="Enter your email address">
+		</div>
+		
+			<label for="leave-type">Leave Type</label>
+			<select id="leave-type" name="leave-type" [(ngModel)]="leave.type"  style="width: 50%;">
+				<option value="">-- Select --</option>
+				<option value="vacation">Vacation</option>
+				<option value="sick">Sick</option>
+				<option value="personal">Personal</option>
+			</select>
+
+			<label for="start-date">Start Date</label>
+			<!--<input type="text" id="start-date" name="start-date" [(ngModel)]="leave.applieddate"    placeholder="Enter start date (dd/mm/yyyy)">
+			--><input type="date" name="Dpfrom" [(ngModel)]="leave.applieddate" >
+			<label for="end-date">NoOfdays</label>
+			<input type="text" id="end-date" name="noofdays" [(ngModel)]="leave.noofdays" placeholder="NoofDays">
+
+			<label for="reason" name="reson" >Reason</label>
+			<textarea id="reason" name="reason" [(ngModel)]="leave.leavereson" placeholder="Enter reason for leave"></textarea>
+
+			<input type="submit" value="Submit" (click)="ApplyLeave()">
+		</form>
+	</div>
+  </ion-content>
+
+
